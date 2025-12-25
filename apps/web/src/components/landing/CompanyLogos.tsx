@@ -41,15 +41,15 @@ export default function CompanyLogos() {
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      className="flex w-full flex-col items-center gap-8 pt-32 pb-12"
+      transition={{ duration: 0.8, ease: "linear" }}
+      className="flex w-full flex-col items-center gap-8 pt-12 pb-12"
     >
       <div className="flex flex-col items-center gap-4">
         <motion.p
           initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "linear" }}
           className="text-center text-lg font-medium text-zinc-700 sm:text-xl"
         >
           Our Resumes have got people employed at
@@ -58,7 +58,7 @@ export default function CompanyLogos() {
           initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "linear" }}
           width="60"
           height="60"
           viewBox="0 0 24 24"
@@ -88,10 +88,10 @@ export default function CompanyLogos() {
         whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ 
-          duration: 4, 
+          duration: 1, 
           delay: 0.2, 
           ease: "linear",
-          rotate: { duration: 0.5, ease: "linear" }
+          rotate: { duration: 1, ease: "linear" }
         }}
         className="w-full"
       >

@@ -1,12 +1,27 @@
+"use client";
+
 import HeroTitle from "@/src/components/landing/HeroTitle";
 import IntakeForm from "@/src/components/landing/IntakeForm";
 import Navbar from "@/src/components/landing/Navbar";
 import CompanyLogos from "@/src/components/landing/CompanyLogos";
 import DarkVeil from "@/src/components/DarkVeil";
+import Benefits from "@/src/components/landing/Benefits";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gray-50 text-zinc-900">
+    <div className="relative min-h-screen bg-gray-50 text-zinc-900">
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-[50vh] z-0 overflow-hidden">
         <DarkVeil hueShift={280} speed={2}  warpAmount={3} />
       </div>
@@ -26,17 +41,24 @@ export default function Home() {
         <div className="absolute top-[58vh] right-[10%] h-[180px] w-[180px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.15),transparent_70%)]" />
       </div>
       <Navbar />
-      <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-20 pt-18 sm:pt-24">
+      <motion.main
+        ref={heroRef}
+        style={{ scale, opacity }}
+        className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-20 pt-18 sm:pt-24"
+      >
         <div className="flex w-full max-w-4xl flex-col items-center gap-10">
           <HeroTitle />
           <div className="w-full max-w-2xl">
             <IntakeForm />
           </div>
         </div>
+      </motion.main>
+      <Benefits />
+      <div className="relative z-10 flex w-full items-center justify-center px-6 pb-16 pt-10 sm:pt-14">
         <div className="w-full">
           <CompanyLogos />
         </div>
-      </main>
+      </div>
     </div>
   );
 }
