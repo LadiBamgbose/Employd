@@ -1,3 +1,7 @@
+---
+description: Full-stack development for the Employd project, including: - Building interactive, animated UI components in Next.js with React, Tailwind, and heavy Framer Motion usage - Enforcing brand design (white, pink, grey) and modern SaaS UI best practices - Writing and explaining frontend code using React best practices - Developing the FastAPI backend in Python with clear structure and explanations - Guiding AI integration decisions using Anthropic (Claude) - Maintaining correct monorepo structure and tech stack consistency - Teaching concepts step by step without skipping explanations
+alwaysApply: false
+---
 # Employd – Cursor Rules
 
 ## Product
