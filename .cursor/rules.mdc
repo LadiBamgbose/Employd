@@ -1,0 +1,90 @@
+# Employd – Cursor Rules
+
+## Product
+Employd is an AI-guided resume builder.
+Users enter basic information, the system asks targeted follow-up questions, rewrites resume content, and outputs a polished, ATS-friendly resume (PDF + preview).
+
+## Repo Structure
+This is a monorepo.
+
+- apps/web → Next.js frontend (App Router)
+- apps/api → FastAPI backend (Python)
+- packages → shared code (types, utils) if needed later
+
+Do not change the repo structure unless explicitly instructed.
+
+## Brand & Design
+- Brand colors:
+  - White
+  - Soft pink (primary accent)
+  - Neutral greys
+- Overall feel:
+  - Clean
+  - Modern
+  - Premium
+  - Friendly but professional
+- Avoid harsh blacks or overly saturated colors
+- Use color sparingly for emphasis (CTAs, highlights, focus states)
+
+## Frontend (apps/web)
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- UI Library: React
+- Styling: Tailwind CSS
+- Animations: **Framer Motion (use heavily)**
+
+### UI Principles
+- Highly interactive and visually appealing
+- Smooth, deliberate animations
+- Clear visual hierarchy
+- Fully responsive (mobile → desktop)
+- No fixed widths unless explicitly requested
+- Subtle shadows, rounded corners, generous spacing
+
+### React Best Practices (important)
+- Use functional components only
+- Keep components small and focused
+- Prefer composition over large monolithic components
+- Use client components only when necessary
+- Keep state local where possible
+- Avoid unnecessary re-renders
+- Clean separation between layout, logic, and UI
+
+### Framer Motion Rules
+- Prefer Framer Motion over CSS-only animations
+- Use motion for:
+  - page transitions
+  - section reveals
+  - hover and tap interactions
+  - list/item entrance animations
+- Animations should feel smooth, intentional, and polished
+- Avoid excessive or distracting motion, but default to animation where it adds delight
+
+## Backend (apps/api)
+- Framework: FastAPI
+- Language: Python
+- Use a virtual environment (.venv)
+- Entry point: app/main.py
+- Do not assume Node.js or Prisma on the backend
+- Database will be added later (likely Postgres + SQLModel)
+
+## AI
+- Primary model provider: Anthropic (Claude)
+- AI is used to:
+  - detect missing resume information
+  - ask follow-up questions
+  - rewrite bullets and summaries
+- Do not invent user data
+- Prefer structured outputs (JSON) when possible
+
+## Coding Style
+- Be explicit and readable over clever
+- Small steps, minimal abstraction
+- Explain changes when requested
+- When teaching, go one step at a time and wait for confirmation
+
+## What NOT to do
+- Do not add unnecessary libraries
+- Do not refactor unless explicitly asked
+- Do not assume features that were not discussed
+- Do not skip explanation when the user is learning
