@@ -7,15 +7,15 @@ import { Textarea } from "../ui/Textarea";
 export default function IntakeForm() {
   return (
     <>
-      <motion.div
+    <motion.div
         initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1, ease: "easeOut" }}
         className="rounded-3xl border border-zinc-100 bg-transparent p-6 sm:p-8"
         style={{
           boxShadow: "0 20px 40px -10px rgba(255, 20, 147, 0.4), 0 10px 20px -5px rgba(255, 20, 147, 0.3)",
         }}
-      >
+    >
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <label htmlFor="fullName" className="text-sm font-medium text-zinc-700">
@@ -43,7 +43,7 @@ export default function IntakeForm() {
                 }}
               />
             </motion.div>
-          </div>
+        </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-sm font-medium text-zinc-700">
               Email
@@ -71,7 +71,7 @@ export default function IntakeForm() {
                 }}
               />
             </motion.div>
-          </div>
+        </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="linkedin" className="text-sm font-medium text-zinc-700">
               LinkedIn
@@ -82,11 +82,11 @@ export default function IntakeForm() {
               transition={{ duration: 0.2 }}
               className="relative"
             >
-              <Input
-                id="linkedin"
-                type="url"
-                placeholder="linkedin.com/in/janedoe"
-                name="linkedin"
+          <Input
+            id="linkedin"
+            type="url"
+            placeholder="linkedin.com/in/janedoe"
+            name="linkedin"
                 className="relative z-10 border-0 bg-white transition-shadow hover:shadow-xl"
                 style={{
                   boxShadow: "0 10px 25px -5px rgba(255, 20, 147, 0.3), 0 8px 10px -6px rgba(255, 20, 147, 0.2)",
@@ -97,9 +97,9 @@ export default function IntakeForm() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = "0 10px 25px -5px rgba(255, 20, 147, 0.3), 0 8px 10px -6px rgba(255, 20, 147, 0.2)";
                 }}
-              />
+          />
             </motion.div>
-          </div>
+        </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="resumeInfo" className="text-sm font-medium text-zinc-700">
               Information for your resume
@@ -110,7 +110,7 @@ export default function IntakeForm() {
               transition={{ duration: 0.2 }}
               className="relative"
             >
-              <Textarea
+          <Textarea
                 id="resumeInfo"
                 rows={6}
                 placeholder="Enter the information you want on your resume..."
@@ -127,9 +127,9 @@ export default function IntakeForm() {
                 }}
               />
             </motion.div>
-          </div>
         </div>
-      </motion.div>
+        </div>
+    </motion.div>
       <div className="flex justify-center pt-8">
         <motion.button
           initial={{ opacity: 0, x: -10 }}

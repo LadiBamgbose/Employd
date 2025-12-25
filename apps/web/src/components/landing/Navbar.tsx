@@ -10,7 +10,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed left-0 right-0 top-6 z-30"
     >
-      <div className="mx-auto flex w-[min(1100px,92vw)] items-center justify-between rounded-full border-2 border-white/40 bg-transparent px-6 py-3 backdrop-blur-sm">
+      <div className="mx-auto flex w-[min(1100px,92vw)] items-center justify-between rounded-2xl border-2 border-white/40 bg-transparent px-6 py-3 backdrop-blur-sm">
         <div className="text-lg font-semibold tracking-tight text-zinc-900">
           Employd
         </div>

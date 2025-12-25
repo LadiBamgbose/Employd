@@ -16,19 +16,19 @@ export default function HeroTitle() {
         }}
         style={{ transformStyle: "preserve-3d" }}
         className="text-7xl font-bold tracking-tight sm:text-9xl"
-      >
-        <span
-          className="inline-block text-transparent"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-          }}
         >
-          Employd
+        <span
+            className="inline-block text-transparent"
+            style={{
+              backgroundImage:
+              "linear-gradient(90deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+            }}
+          >
+            Employd
         </span>
-      </motion.h1>
+        </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
