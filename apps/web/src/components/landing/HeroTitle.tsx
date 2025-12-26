@@ -7,12 +7,12 @@ export default function HeroTitle() {
   return (
     <div className="flex flex-col items-center gap-4 text-center" style={{ perspective: "1000px" }}>
       <motion.h1
-        initial={{ opacity: 0, scale: 0.1, rotateY: 1440 }}
+        initial={{ opacity: 0, scale: 0.1, rotateY: 720 }}
         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
         transition={{
           opacity: { duration: 0.3 },
-          scale: { duration: 1.5, ease: "easeOut" },
-          rotateY: { duration: 1.5, ease: "easeOut" },
+          scale: { duration: 0.8, ease: "easeOut" },
+          rotateY: { duration: 0.8, ease: "easeOut" },
         }}
         style={{ transformStyle: "preserve-3d" }}
         className="text-7xl font-bold tracking-tight sm:text-9xl"

@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import AuthModal from "./AuthModal";
 
 export default function Navbar() {
+  const [authOpen, setAuthOpen] = useState(false);
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -16 }}
@@ -15,8 +19,9 @@ export default function Navbar() {
           Employd
         </div>
         <div className="flex items-center text-sm">
-          <motion.a
-            href="#"
+          <motion.button
+            type="button"
+            onClick={() => setAuthOpen(true)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="relative overflow-hidden rounded-full px-6 py-2.5 font-semibold text-white transition-all"
@@ -32,9 +37,10 @@ export default function Navbar() {
               whileHover={{ x: "100%" }}
               transition={{ duration: 0.6 }}
             />
-          </motion.a>
+          </motion.button>
         </div>
       </div>
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
     </motion.nav>
   );
 }
