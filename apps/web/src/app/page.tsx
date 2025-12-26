@@ -5,7 +5,6 @@ import IntakeForm from "@/src/components/landing/IntakeForm";
 import Navbar from "@/src/components/landing/Navbar";
 import CompanyLogos from "@/src/components/landing/CompanyLogos";
 import DarkVeil from "@/src/components/DarkVeil";
-import Benefits from "@/src/components/landing/Benefits";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -17,8 +16,8 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
+  const scale = useTransform(scrollYProgress, [0.1, 1], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0.1, 0.5, 1], [1, 0.5, 0]);
 
   return (
     <div className="relative min-h-screen bg-gray-50 text-zinc-900">
@@ -39,6 +38,21 @@ export default function Home() {
         <div className="absolute top-[50vh] right-[12%] h-[200px] w-[200px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.16),transparent_70%)]" />
         <div className="absolute top-[55vh] left-[8%] h-[140px] w-[140px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.14),transparent_70%)]" />
         <div className="absolute top-[58vh] right-[10%] h-[180px] w-[180px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.15),transparent_70%)]" />
+        {/* Fill top-right empty space */}
+        <div className="absolute top-[18%] right-[6%] h-[180px] w-[180px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.2),transparent_70%)]" />
+        <div className="absolute top-[12%] right-[2%] h-[200px] w-[200px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.22),transparent_70%)]" />
+        {/* Around intake form area */}
+        <div className="absolute top-[62vh] left-[6%] h-[200px] w-[200px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.2),transparent_70%)]" />
+        <div className="absolute top-[64vh] right-[6%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.22),transparent_70%)]" />
+        <div className="absolute top-[70vh] left-[42%] h-[150px] w-[150px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.18),transparent_70%)]" />
+        <div className="absolute top-[74vh] left-[24%] h-[170px] w-[170px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.19),transparent_70%)]" />
+        <div className="absolute top-[76vh] right-[24%] h-[160px] w-[160px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.18),transparent_70%)]" />
+        <div className="absolute top-[72vh] left-[8%] h-[140px] w-[140px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.16),transparent_70%)]" />
+        <div className="absolute top-[66vh] left-[32%] h-[120px] w-[120px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.15),transparent_70%)]" />
+        <div className="absolute top-[68vh] right-[34%] h-[130px] w-[130px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.16),transparent_70%)]" />
+        <div className="absolute top-[78vh] left-[52%] h-[140px] w-[140px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.17),transparent_70%)]" />
+        <div className="absolute top-[80vh] right-[14%] h-[150px] w-[150px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.18),transparent_70%)]" />
+        <div className="absolute top-[82vh] left-[16%] h-[160px] w-[160px] rounded-full bg-[radial-gradient(circle,rgba(255,79,216,0.19),transparent_70%)]" />
       </div>
       <Navbar />
       <motion.main
@@ -53,7 +67,6 @@ export default function Home() {
           </div>
         </div>
       </motion.main>
-      <Benefits />
       <div className="relative z-10 flex w-full items-center justify-center px-6 pb-16 pt-10 sm:pt-14">
         <div className="w-full">
           <CompanyLogos />
