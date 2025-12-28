@@ -1,0 +1,179 @@
+/* Page sizing for clean PDF output */
+@page {
+    size: Letter;
+    margin: 0;
+  }
+  
+  :root {
+    --page-w: 8.5in;
+    --page-h: 11in;
+    --pad-x: 0.75in;
+    --pad-y: 0.6in;
+    --text: #111;
+    --rule: #111;
+    --muted: #222;
+    --link: #0645ad; /* classic link blue */
+  }
+  
+  /* Outer page */
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    padding: var(--pad-y) var(--pad-x);
+    box-sizing: border-box;
+    color: var(--text);
+  
+    /* Serif look like the screenshot */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .name {
+    font-size: 26pt;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+  }
+  
+  .contact {
+    font-size: 11pt;
+    color: var(--muted);
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .contact a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  
+  .contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .dot {
+    padding: 0 2px;
+  }
+  
+  /* Sections */
+  .section {
+    margin-top: 14px;
+  }
+  
+  .section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .section-title {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 12pt;
+    white-space: nowrap;
+  }
+  
+  .section-rule {
+    height: 0;
+    border-top: 2px solid var(--rule);
+    flex: 1;
+    transform: translateY(1px);
+  }
+  
+  /* Entries */
+  .entry {
+    margin-top: 8px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  
+  .left {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .right {
+    white-space: nowrap;
+    text-align: right;
+  }
+  
+  .strong {
+    font-weight: 700;
+  }
+  
+  .role {
+    font-style: italic;
+    margin-top: 2px;
+  }
+  
+  /* Meta lines in education */
+  .meta {
+    margin-top: 4px;
+  }
+  
+  .label {
+    font-weight: 700;
+  }
+  
+  /* Bullets styled like hyphens */
+  .bullets {
+    margin: 6px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .bullets li {
+    margin: 2px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  
+  .bullets li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Skills list (also hyphen-style like screenshot) */
+  .skill-list {
+    margin: 8px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .skill-list li {
+    margin: 3px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  
+  .skill-list li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Print tweaks */
+  @media print {
+    body {
+      margin: 0;
+    }
+    .page {
+      box-shadow: none;
+    }
+  }
+  

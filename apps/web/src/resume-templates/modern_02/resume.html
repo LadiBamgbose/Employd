@@ -1,0 +1,166 @@
+<div class="page">
+    <!-- Top header -->
+    <header class="top">
+      <div class="top-rule"></div>
+  
+      <div class="top-center">
+        <!-- Optional watermark "signature" text. Change or remove. -->
+        <div class="signature">{{ basics.signature_text }}</div>
+  
+        <h1 class="name">{{ basics.name }}</h1>
+        <div class="title">{{ basics.title }}</div>
+      </div>
+  
+      <div class="top-rule"></div>
+    </header>
+  
+    <!-- 2-column layout -->
+    <main class="grid">
+      <!-- LEFT SIDEBAR -->
+      <aside class="left">
+        <!-- CONTACT -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">C</span>
+            <h2 class="block-title">CONTACT</h2>
+          </div>
+  
+          <ul class="contact">
+            {% if basics.phone %}
+            <li>
+              <span class="ico">☎</span>
+              <span class="text">{{ basics.phone }}</span>
+            </li>
+            {% endif %}
+  
+            {% if basics.email %}
+            <li>
+              <span class="ico">✉</span>
+              <span class="text">{{ basics.email }}</span>
+            </li>
+            {% endif %}
+  
+            {% if basics.address %}
+            <li>
+              <span class="ico">⌂</span>
+              <span class="text">{{ basics.address }}</span>
+            </li>
+            {% endif %}
+  
+            {% if links.website %}
+            <li>
+              <span class="ico">🌐</span>
+              <span class="text">{{ links.website }}</span>
+            </li>
+            {% endif %}
+          </ul>
+        </section>
+  
+        <div class="divider"></div>
+  
+        <!-- EDUCATION -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">E</span>
+            <h2 class="block-title">EDUCATION</h2>
+          </div>
+  
+          <div class="edu">
+            {% for edu in education %}
+            <div class="edu-item">
+              <div class="edu-dates">{{ edu.start }} - {{ edu.end }}</div>
+              <div class="edu-school">{{ edu.school }}</div>
+  
+              <ul class="mini-bullets">
+                {% if edu.degree %}
+                <li>{{ edu.degree }}</li>
+                {% endif %}
+                {% if edu.gpa %}
+                <li>GPA: {{ edu.gpa }}</li>
+                {% endif %}
+                {% if edu.notes %}
+                <li>{{ edu.notes }}</li>
+                {% endif %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+  
+        <div class="divider"></div>
+  
+        <!-- SKILLS -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">S</span>
+            <h2 class="block-title">SKILLS</h2>
+          </div>
+  
+          <ul class="bullets">
+            {% for s in skills %}
+            <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+  
+        <div class="divider"></div>
+  
+        <!-- LANGUAGES -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">L</span>
+            <h2 class="block-title">LANGUAGES</h2>
+          </div>
+  
+          <ul class="bullets">
+            {% for lang in languages %}
+            <li>{{ lang.name }}: {{ lang.level }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </aside>
+  
+      <!-- RIGHT CONTENT -->
+      <section class="right">
+        <!-- PROFILE SUMMARY -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">P</span>
+            <h2 class="block-title">PROFILE SUMMARY</h2>
+          </div>
+  
+          <p class="summary">
+            {{ basics.summary }}
+          </p>
+        </section>
+  
+        <div class="divider"></div>
+  
+        <!-- WORK EXPERIENCE -->
+        <section class="block">
+          <div class="block-head">
+            <span class="badge">W</span>
+            <h2 class="block-title">WORK EXPERIENCE</h2>
+          </div>
+  
+          {% for job in experience %}
+          <div class="job">
+            <div class="job-top">
+              <div class="job-company">{{ job.company }}</div>
+              <div class="job-dates">{{ job.start }} - {{ job.end }}</div>
+            </div>
+  
+            <div class="job-title">{{ job.title }}</div>
+  
+            <ul class="work-bullets">
+              {% for b in job.bullets %}
+              <li>{{ b }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </section>
+      </section>
+    </main>
+  </div>
+  

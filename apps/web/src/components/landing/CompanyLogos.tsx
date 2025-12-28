@@ -41,24 +41,24 @@ export default function CompanyLogos() {
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      className="flex w-full flex-col items-center gap-8 pt-32 pb-12"
+      transition={{ duration: 0.8, ease: "linear" }}
+      className="flex w-full flex-col items-center gap-8 pt-12 pb-12"
     >
       <div className="flex flex-col items-center gap-4">
         <motion.p
-          initial={{ opacity: 0, x: 300 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "linear" }}
           className="text-center text-lg font-medium text-zinc-700 sm:text-xl"
         >
           Our Resumes have got people employed at
         </motion.p>
         <motion.svg
-          initial={{ opacity: 0, x: -300 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{  once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "linear", delay: 0.12 }}
           width="60"
           height="60"
           viewBox="0 0 24 24"
@@ -84,15 +84,10 @@ export default function CompanyLogos() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, x: -600, y: -400, scale: 0.15, rotate: -1080 }}
-        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }}
-        viewport={{ once: true }}
-        transition={{ 
-          duration: 4, 
-          delay: 0.2, 
-          ease: "linear",
-          rotate: { duration: 0.5, ease: "linear" }
-        }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: "linear", delay: 0.18 }}
         className="w-full"
       >
         <Marquee speed={30} gradient={false} pauseOnHover={false}>

@@ -1,0 +1,151 @@
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">{{ basics.name }}</h1>
+  
+      <div class="contact">
+        <span>{{ basics.email }}</span>
+        <span class="dot">•</span>
+        <span>{{ basics.phone }}</span>
+        <span class="dot">•</span>
+        <a href="{{ links.linkedin }}" target="_blank" rel="noreferrer">{{ links.linkedin_display }}</a>
+        <span class="dot">•</span>
+        <a href="{{ links.github }}" target="_blank" rel="noreferrer">{{ links.github_display }}</a>
+      </div>
+    </header>
+  
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-title-row">
+        <div class="section-title">EDUCATION</div>
+        <div class="section-rule"></div>
+      </div>
+  
+      {% for edu in education %}
+      <div class="entry">
+        <div class="row">
+          <div class="left strong">{{ edu.school }}</div>
+          <div class="right">{{ edu.location }}</div>
+        </div>
+  
+        <div class="row">
+          <div class="left strong">
+            {{ edu.degree }}{% if edu.minor %}, {{ edu.minor }}{% endif %}{% if edu.gpa %} | GPA: {{ edu.gpa }}{% endif %}
+          </div>
+          <div class="right">{{ edu.grad_date }}</div>
+        </div>
+  
+        {% if edu.coursework %}
+        <div class="meta">
+          <span class="label">Relevant Coursework:</span> {{ edu.coursework }}
+        </div>
+        {% endif %}
+  
+        {% if edu.awards %}
+        <div class="meta">
+          <span class="label">Awards &amp; Honors:</span> {{ edu.awards }}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+  
+    <!-- RELEVANT EXPERIENCE -->
+    <section class="section">
+      <div class="section-title-row">
+        <div class="section-title">RELEVANT EXPERIENCE</div>
+        <div class="section-rule"></div>
+      </div>
+  
+      {% for job in experience %}
+      <div class="entry">
+        <div class="row">
+          <div class="left strong">{{ job.company }}{% if job.company_location %} | {{ job.company_location }}{% endif %}</div>
+          <div class="right">{{ job.start }} - {{ job.end }}</div>
+        </div>
+  
+        <div class="role">{{ job.title }}</div>
+  
+        <ul class="bullets">
+          {% for b in job.bullets %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+  
+    <!-- TECHNICAL PROJECTS -->
+    <section class="section">
+      <div class="section-title-row">
+        <div class="section-title">TECHNICAL PROJECTS</div>
+        <div class="section-rule"></div>
+      </div>
+  
+      {% for proj in projects %}
+      <div class="entry">
+        <div class="row">
+          <div class="left strong">
+            {{ proj.name }}{% if proj.org %} | {{ proj.org }}{% endif %}
+          </div>
+          <div class="right">{{ proj.date }}</div>
+        </div>
+  
+        <ul class="bullets">
+          {% for b in proj.bullets %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+  
+    <!-- ADDITIONAL EXPERIENCE -->
+    <section class="section">
+      <div class="section-title-row">
+        <div class="section-title">ADDITIONAL EXPERIENCE</div>
+        <div class="section-rule"></div>
+      </div>
+  
+      {% for extra in additional_experience %}
+      <div class="entry">
+        <div class="row">
+          <div class="left strong">{{ extra.org }}{% if extra.dept %} | {{ extra.dept }}{% endif %}</div>
+          <div class="right">{{ extra.start }} - {{ extra.end }}</div>
+        </div>
+  
+        <div class="role">{{ extra.role }}</div>
+  
+        <ul class="bullets">
+          {% for b in extra.bullets %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+  
+    <!-- SKILLS -->
+    <section class="section">
+      <div class="section-title-row">
+        <div class="section-title">SKILLS &amp; CERTIFICATIONS</div>
+        <div class="section-rule"></div>
+      </div>
+  
+      <ul class="skill-list">
+        {% if skills.languages %}
+        <li><span class="label">Programming Languages:</span> {{ skills.languages }}</li>
+        {% endif %}
+        {% if skills.tools %}
+        <li><span class="label">Tools and Technologies:</span> {{ skills.tools }}</li>
+        {% endif %}
+        {% if skills.ml %}
+        <li><span class="label">Machine Learning:</span> {{ skills.ml }}</li>
+        {% endif %}
+        {% if skills.certs %}
+        <li><span class="label">Certifications:</span> {{ skills.certs }}</li>
+        {% endif %}
+      </ul>
+    </section>
+  </div>
+  
