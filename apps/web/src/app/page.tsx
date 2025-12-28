@@ -4,6 +4,8 @@ import HeroTitle from "@/src/components/landing/HeroTitle";
 import IntakeForm from "@/src/components/landing/IntakeForm";
 import Navbar from "@/src/components/landing/Navbar";
 import CompanyLogos from "@/src/components/landing/CompanyLogos";
+import ResumeTemplates from "@/src/components/landing/resume-carousel/ResumeTemplates";
+import Footer from "@/src/components/landing/Footer";
 import DarkVeil from "@/src/components/DarkVeil";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -71,6 +73,12 @@ export default function Home() {
         <div className="w-full">
           <CompanyLogos />
         </div>
+      </div>
+      <div className="relative z-10 w-full px-0 pb-20 sm:px-6">
+        <ResumeTemplates />
+      </div>
+      <div className="relative z-10 w-full px-0 sm:px-0">
+        <Footer />
       </div>
     </div>
   );

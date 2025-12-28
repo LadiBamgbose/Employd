@@ -1,0 +1,128 @@
+<!-- modern_03/resume.html (Jinja) -->
+<div class="page">
+    <!-- Top banner -->
+    <header class="banner">
+      <h1 class="name">{{ basics.name }}</h1>
+      <div class="headline">{{ basics.title }}</div>
+      <div class="mini-rule"></div>
+    </header>
+  
+    <!-- Main -->
+    <main class="content">
+      <!-- Left -->
+      <aside class="left">
+        <ul class="icon-list">
+          {% if basics.phone %}
+          <li>
+            <span class="icon">☎</span>
+            <span>Tel: {{ basics.phone }}</span>
+          </li>
+          {% endif %}
+  
+          {% if basics.email %}
+          <li>
+            <span class="icon">@</span>
+            <span>{{ basics.email }}</span>
+          </li>
+          {% endif %}
+  
+          {% if links.linkedin %}
+          <li>
+            <span class="icon">in</span>
+            <span>{{ links.linkedin_display or links.linkedin }}</span>
+          </li>
+          {% endif %}
+  
+          {% if basics.location %}
+          <li>
+            <span class="icon">⌂</span>
+            <span>{{ basics.location }}</span>
+          </li>
+          {% endif %}
+        </ul>
+  
+        <div class="left-divider"></div>
+  
+        <!-- EDUCATION -->
+        {% if education and education|length > 0 %}
+        <section>
+          <h2 class="section-title">Education</h2>
+  
+          {% for edu in education %}
+          <div class="edu-block">
+            {% if edu.degree %}
+            <div class="edu-degree">{{ edu.degree }}</div>
+            {% endif %}
+  
+            <div class="edu-meta">
+              {% if edu.major %}Major: {{ edu.major }}{% endif %}
+              {% if edu.gpa %}{% if edu.major %} | {% endif %}GPA {{ edu.gpa }}{% endif %}
+            </div>
+  
+            <div class="edu-meta">
+              {{ edu.school }}{% if edu.start or edu.end %} / {% endif %}{{ edu.start }}{% if edu.start and edu.end %} - {% endif %}{{ edu.end }}
+            </div>
+          </div>
+          {% endfor %}
+        </section>
+  
+        <div class="left-divider"></div>
+        {% endif %}
+  
+        <!-- EXPERTISE -->
+        {% if skills and skills|length > 0 %}
+        <section>
+          <h2 class="section-title">Expertise</h2>
+          <ul class="expertise">
+            {% for s in skills %}
+            <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+      </aside>
+  
+      <!-- Right -->
+      <section class="right">
+        <!-- CAREER OBJECTIVE -->
+        {% if basics.summary %}
+        <section class="right-section">
+          <h2 class="right-title">Career Objective</h2>
+          <p class="objective">{{ basics.summary }}</p>
+          <div class="rule"></div>
+        </section>
+        {% endif %}
+  
+        <!-- EXPERIENCE -->
+        {% if experience and experience|length > 0 %}
+        <section class="right-section">
+          <h2 class="right-title">Experience</h2>
+  
+          {% for job in experience %}
+          <div class="job">
+            <div class="job-head">
+              {{ job.title }}{% if job.company %} / {{ job.company }}{% endif %}
+            </div>
+  
+            <div class="job-sub">
+              {% if job.location %}{{ job.location }} / {% endif %}
+              {{ job.start }}{% if job.start and job.end %} - {% endif %}{{ job.end }}
+            </div>
+  
+            {% if job.bullets and job.bullets|length > 0 %}
+            <ul class="job-bullets">
+              {% for b in job.bullets %}
+              <li>{{ b }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </section>
+        {% endif %}
+      </section>
+    </main>
+  
+    <div class="bottom-bar"></div>
+  </div>
+  
