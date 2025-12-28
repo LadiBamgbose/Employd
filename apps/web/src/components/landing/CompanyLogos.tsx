@@ -46,19 +46,19 @@ export default function CompanyLogos() {
     >
       <div className="flex flex-col items-center gap-4">
         <motion.p
-          initial={{ opacity: 0, x: 300 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "linear" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "linear" }}
           className="text-center text-lg font-medium text-zinc-700 sm:text-xl"
         >
           Our Resumes have got people employed at
         </motion.p>
         <motion.svg
-          initial={{ opacity: 0, x: -300 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "linear" }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{  once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "linear", delay: 0.12 }}
           width="60"
           height="60"
           viewBox="0 0 24 24"
@@ -84,15 +84,10 @@ export default function CompanyLogos() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, x: -600, y: -400, scale: 0.15, rotate: -1080 }}
-        whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }}
-        viewport={{ once: true }}
-        transition={{ 
-          duration: 1, 
-          delay: 0.2, 
-          ease: "linear",
-          rotate: { duration: 1, ease: "linear" }
-        }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: "linear", delay: 0.18 }}
         className="w-full"
       >
         <Marquee speed={30} gradient={false} pauseOnHover={false}>

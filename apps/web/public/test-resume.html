@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Resume Preview - Template 3 (Riley Wright)</title>
+
+    <style>
+      @page {
+        size: Letter;
+        margin: 0;
+      }
+
+      :root {
+        --page-w: 8.5in;
+        --page-h: 11in;
+
+        --pad: 0.0in;
+
+        --ink: #1e1e1e;
+        --muted: #555;
+
+        --navy: #2c3e4e;
+        --gold: #c9a36a;
+        --paper: #ffffff;
+
+        --left-w: 33%;
+        --gap: 0px;
+
+        --body-size: 10.5pt;
+        --lh: 1.45;
+
+        --section-size: 11pt;
+        --section-letter: 0.08em;
+
+        --name-size: 28pt;
+        --name-letter: 0.12em;
+      }
+
+      body {
+        margin: 0;
+        background: #f5f5f5;
+      }
+
+      /* Page */
+      .page {
+        width: var(--page-w);
+        min-height: var(--page-h);
+        margin: 24px auto;
+        background: var(--paper);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: var(--body-size);
+        line-height: var(--lh);
+        overflow: hidden;
+      }
+
+      /* Top banner */
+      .banner {
+        background: var(--navy);
+        color: #fff;
+        text-align: center;
+        padding: 28px 0 18px 0;
+        position: relative;
+      }
+
+      .banner::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 4px;
+        background: var(--gold);
+      }
+
+      .name {
+        margin: 0;
+        font-size: var(--name-size);
+        font-weight: 700;
+        letter-spacing: var(--name-letter);
+        text-transform: uppercase;
+      }
+
+      .headline {
+        margin-top: 6px;
+        font-size: 11pt;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .mini-rule {
+        width: 44px;
+        height: 2px;
+        background: var(--gold);
+        margin: 10px auto 0 auto;
+      }
+
+      /* Content area */
+      .content {
+        display: grid;
+        grid-template-columns: var(--left-w) 1fr;
+      }
+
+      /* Left column */
+      .left {
+        padding: 18px 18px 18px 18px;
+        border-right: 2px solid rgba(201, 163, 106, 0.55);
+      }
+
+      .icon-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .icon-list li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 10px;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      .icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        background: rgba(201, 163, 106, 0.25);
+        border: 1px solid rgba(201, 163, 106, 0.7);
+        color: var(--gold);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11pt;
+      }
+
+      .left-divider {
+        border-top: 1px solid rgba(201, 163, 106, 0.75);
+        margin: 18px 0;
+      }
+
+      .section-title {
+        margin: 0 0 10px 0;
+        font-size: var(--section-size);
+        font-weight: 700;
+        letter-spacing: var(--section-letter);
+        text-transform: uppercase;
+        color: #6a4b1f;
+      }
+
+      .edu-block {
+        margin-bottom: 14px;
+      }
+
+      .edu-degree {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10pt;
+      }
+
+      .edu-meta {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 9.8pt;
+      }
+
+      .expertise {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .expertise li {
+        margin: 10px 0;
+        color: var(--ink);
+      }
+
+      /* Right column */
+      .right {
+        padding: 18px 22px 18px 22px;
+      }
+
+      .right-section {
+        margin-bottom: 18px;
+      }
+
+      .right-title {
+        margin: 0 0 10px 0;
+        font-size: var(--section-size);
+        font-weight: 700;
+        letter-spacing: var(--section-letter);
+        text-transform: uppercase;
+        color: #6a4b1f;
+      }
+
+      .rule {
+        border-top: 1px solid rgba(201, 163, 106, 0.75);
+        margin: 12px 0 14px 0;
+      }
+
+      .objective {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .job {
+        margin: 14px 0 18px 0;
+      }
+
+      .job-head {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10pt;
+      }
+
+      .job-sub {
+        margin-top: 3px;
+        font-style: italic;
+        color: var(--muted);
+        font-size: 9.8pt;
+      }
+
+      .job-bullets {
+        margin: 10px 0 0 0;
+        padding-left: 18px;
+      }
+
+      .job-bullets li {
+        margin: 7px 0;
+        color: var(--ink);
+      }
+
+      /* Bottom gold bar */
+      .bottom-bar {
+        height: 10px;
+        background: var(--gold);
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+        .page {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- Top banner -->
+      <header class="banner">
+        <h1 class="name">Riley Wright</h1>
+        <div class="headline">Digital Marketer</div>
+        <div class="mini-rule"></div>
+      </header>
+
+      <!-- Main -->
+      <main class="content">
+        <!-- Left -->
+        <aside class="left">
+          <ul class="icon-list">
+            <li>
+              <span class="icon">☎</span>
+              <span>Tel: 212-123-1234</span>
+            </li>
+            <li>
+              <span class="icon">@</span>
+              <span>RileyWright@mail.com</span>
+            </li>
+            <li>
+              <span class="icon">in</span>
+              <span>LinkedIn.com/username</span>
+            </li>
+            <li>
+              <span class="icon">⌂</span>
+              <span>City name, State, Zip</span>
+            </li>
+          </ul>
+
+          <div class="left-divider"></div>
+
+          <section class="edu-block">
+            <h2 class="section-title">Education</h2>
+
+            <div class="edu-block">
+              <div class="edu-degree">Masters Degree</div>
+              <div class="edu-meta">Major: Branding | GPA 3.9</div>
+              <div class="edu-meta">New York University / 2011 - 2015</div>
+            </div>
+
+            <div class="edu-block" style="margin-top:18px;">
+              <div class="edu-degree">Bachelor of Science</div>
+              <div class="edu-meta">Major: Branding | GPA 3.9</div>
+              <div class="edu-meta">New York College / 2007 - 2011</div>
+            </div>
+          </section>
+
+          <div class="left-divider"></div>
+
+          <section>
+            <h2 class="section-title">Expertise</h2>
+            <ul class="expertise">
+              <li>Leadership and training</li>
+              <li>Creativity</li>
+              <li>Planning and Forecasting</li>
+              <li>Management</li>
+              <li>Budgeting</li>
+              <li>Lorem Ipsum</li>
+              <li>Business Management</li>
+              <li>Attention to Detail</li>
+              <li>Resource Management</li>
+            </ul>
+          </section>
+        </aside>
+
+        <!-- Right -->
+        <section class="right">
+          <section class="right-section">
+            <h2 class="right-title">Career Objective</h2>
+            <p class="objective">
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+              nisi elit consequat ipsum, nec sagittis sem nibh. Morbi accumsan ipsum velit. Nam nec tellus a
+              odio tincidunt auctor a ornare odio.
+            </p>
+            <div class="rule"></div>
+          </section>
+
+          <section class="right-section">
+            <h2 class="right-title">Experience</h2>
+
+            <div class="job">
+              <div class="job-head">Enter job position here / company</div>
+              <div class="job-sub">Location / Jan 2017 - Present</div>
+              <ul class="job-bullets">
+                <li>Lorem quis bibendum auctor, nisi elit consequat ipsum dolor.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+                <li>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+                <li>Lorem nonesense mauris vitae erat consequat auctor eu in elit proin.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head">Enter job position here / company</div>
+              <div class="job-sub">Location / May 2007 - April 2009</div>
+              <ul class="job-bullets">
+                <li>Lorem quis bibendum auctor, nisi elit consequat ipsum dolor.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+                <li>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-head">Enter job position here / company</div>
+              <div class="job-sub">Location / May 2006 - April 2007</div>
+              <ul class="job-bullets">
+                <li>Lorem quis bibendum auctor, nisi elit consequat ipsum dolor.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+                <li>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</li>
+                <li>Sed non mauris vitae erat consequat auctor eu in elit class.</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <div class="bottom-bar"></div>
+    </div>
+  </body>
+</html>
+
